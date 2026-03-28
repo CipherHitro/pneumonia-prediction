@@ -5,6 +5,7 @@ from tensorflow.keras.applications import VGG16
 from PIL import Image
 from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
+from model_loader import load_model_properly
 
 app = FastAPI()
 
@@ -16,18 +17,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Reconstruct model architecture
-base_model = VGG16(weights=None, include_top=False, input_shape=(224, 224, 3))
-model = Sequential([
-    Input(shape=(224, 224, 3)),
-    base_model,
-    Flatten(),
-    Dense(256, activation='relu'),
-    Dropout(0.5),
-    Dense(1, activation='sigmoid')
-])
-# Load weights from the saved model avoiding Keras 3 serialization bugs
-model.load_weights("ai.keras")
+# Load the model directly from the loader
+model = load_model_properly()
 
 @app.get('/')
 def home():
