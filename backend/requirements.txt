@@ -3,4 +3,7 @@ uvicorn==0.42.0
 python-multipart==0.0.22
 tensorflow==2.21.0
 Pillow==12.1.1
+boto3==1.42.78
+python-dotenv==1.2.2
+numpy==2.4.3
 numpy==2.4.3
