@@ -2,6 +2,8 @@
 
 An AI-powered diagnostic assistance tool that detects Pneumonia from chest X-Ray images. This full-stack application allows users to upload an X-Ray image and get an instant preliminary detection analysis, indicating whether the scan is "Normal" or shows signs of "Pneumonia", along with a confidence score.
 
+**Live Demo:** [pneumonia-prediction.mentalorbit.tech](https://pneumonia-prediction.mentalorbit.tech)
+
 ## 🚀 Tech Stack
 
 ### Frontend
